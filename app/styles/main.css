@@ -1,0 +1,416 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.app {
+    width:100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+    /*.app md-whiteframe {
+        display:block;
+    }*/
+
+    .app .vertical-stretch {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .app .main-content {
+        height: calc(100% - 64px);
+        height:-webkit-calc(100% - 64px);
+    }
+
+    .app .message-item {
+        height:155px;
+    }
+
+        .app .message-item .mesage-icon {
+            font-size:30px;
+            height:30px;
+            width:30px;
+        }
+
+        .app .message-item .message-container
+        {
+            width:100%;
+        }
+
+    .app .new-message-notification {
+        padding-left: 10px;
+        padding-right: 0px;
+        background-color: #43A047;
+        min-width: 40px;
+    }
+
+        .app .new-message-notification .md-button md-icon {
+            color: #FFF;
+            font-size:20px;
+        }
+        .app .new-message-notification .md-button {
+            color: #FFF;
+            min-width: 16px;
+            padding-right:0px;
+            padding-left: 0px;
+            min-height: 26px;
+            line-height: 26px;
+        }
+
+    .app .new-message-notification .new-message-notification-text {
+        cursor:pointer;
+        text-decoration:underline;
+    }
+
+.app .calendar {
+  margin: 8px; }
+.app .gray {
+  background: #f5f5f5; }
+.app .green {
+  background: #b9f6ca; }
+.app .yellow {
+  background: #ffff8d; }
+.app .blue {
+  background-color: rgb(16,108,200); }
+.app .purple {
+  background: #b388ff; }
+.app .red {
+  background: #ff8a80; }
+
+.app .violet {
+    background: #CE93D8;
+}
+.app md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+
+.icon-warning {
+    color:#FFCA28;
+}
+
+.icon-accept
+{
+    color:#b9f6ca; 
+}
+
+.icon-decline
+{
+    color:#ff8a80;
+}
+
+.calendar
+{
+    width:100%;
+}
+
+    .calendar .weekDay
+    {
+        color: #FFF;
+        margin-left:10px;
+        padding: 4px 7px 2px 4px;
+    }
+
+    .calendar .weekDay:first-child
+    {
+        margin-left:0px
+    }
+
+    .calendar div
+    {
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; 
+    }
+.calendar div.week
+{
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    height: 70px;
+}
+    .calendar div.week:first-child
+    {
+        margin-top:0px;
+    }
+
+    .calendar div.week .day
+    {
+        margin-left:10px;
+        cursor:pointer;
+        border: 1px solid transparent;
+    }
+        .calendar div.week .day:hover
+        {
+            
+            border: 1px solid #2875C7;
+        }
+    
+        .calendar div.week .day:first-child
+        {
+            margin-left: 0px;
+        }
+
+        .calendar div.week .day.different-month {
+            color:#C0C0C0;
+        }
+
+        .calendar div.week .day .dayTitle
+        {
+            font-size: 25px;
+            text-align:center;
+            margin: 2px 0px 2px 0px;
+        }
+
+        .calendar div.week .day .avilableWorkplaces
+        {
+            margin-top:2px;
+            text-align:center;
+            height:15px;
+        }
+
+        .calendar div.week .day .workTime
+        {
+            text-align:center;
+            height:15px;
+        }
+
+        .calendar div.week .day:disabled,
+        .calendar div.week .day[disabled='disabled'] {
+            color:#C0C0C0;
+        }
+
+
+.bold {
+    font-weight:bold;
+}
+
+.no-wrap {
+    white-space:nowrap;
+}
+
+.ws-selection md-radio-button,
+.ws-selection md-button{
+    margin:0px
+}
+
+.ws-selection-row {
+    min-height:40px
+}
+
+.md-error-toast-theme  {
+     background: #ff8a80;
+}
+
+.ws-selection .md-button.md-icon-button.inline-icon {
+    height:20px;
+    min-height:20px;
+    line-height: 20px;
+    min-width: 22px;
+    
+}
+
+    .ws-selection .md-button.md-icon-button.inline-icon md-icon {
+        font-size:20px;
+    }
+
+.progress-container
+{
+    position:absolute;
+    background: #FFF;
+    opacity: 0.7;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-line
+{
+    background: #BBDEFB;
+}
+
+    .grid-line:nth-child(odd)
+    {
+        background: #E3F2FD;
+    }
+
+.grid-cell
+{
+    margin:4px;
+    padding: 6px 7px 2px 4px
+}
+
+.app md-sidenav md-content
+{
+    max-height:-web-calc(100% - 64px);
+    max-height: -webkit-calc(100% - 64px);  
+    box-sizing: border-box;
+}
+
+.app h3
+{
+    font-size: 16px;
+}
+
+md-list md-list-item.md-3-line .md-list-item-text.not-read,
+md-list md-list-item.md-3-line .md-list-item-text.not-read h3
+{
+    font-weight:bold;
+    color: #000;
+}
+
+    md-list md-list-item.md-3-line .md-list-item-text.not-read p
+    {
+        color: #000;
+    }
+
+.login-container {
+    width:380px;
+    min-width:380px;
+    display:block;
+}
+
+.app .md-open-menu-container
+{
+    box-shadow:none;
+}
+
+.app  md-menu-content.icon-menu
+{
+    min-width:32px;
+    max-width:38px;
+    padding: 0px;
+    background:transparent;
+}
+
+    .app md-menu-content.icon-menu md-menu-item
+    {
+        min-height:40px;
+        height:40px;
+    }
+
+    .app md-menu-content.icon-menu .md-button
+    {
+        padding: 0px 4px 0px 4px;
+        width: 28px;
+        min-width: 24px;
+        margin-left: 2px;
+        
+    }
+
+        .app md-menu-content.icon-menu .md-button:hover
+        {
+            background-color:#FFCDD2;
+        }
+
+    .app md-menu-content.icon-menu .md-button.md-fab.md-mini
+    {
+            line-height: 28px;
+            height:28px;
+            min-height: 28px;
+    }
+        .app md-menu-content.icon-menu .md-button.md-fab.md-mini md-icon
+        {
+            font-size:20px;
+            height:20px;
+            width:20px;
+        }
+            .app md-menu-content.icon-menu .md-button.md-fab.md-mini.icon-in-menu md-icon
+            {
+                color:#7d7d7d
+            }
+        
+
+.app .icon-menu md-menu-item > .md-button md-icon
+{
+    margin:0px;
+}
+
+.app md-icon.invalid
+{
+    color:rgb(244,67,54);
+}

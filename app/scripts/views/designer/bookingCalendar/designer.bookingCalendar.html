@@ -1,0 +1,55 @@
+﻿<div layout="column">
+    <div layout="row" id="calHeader">
+        <md-input-container style="min-width:150px;">
+            <label>Месяц</label>
+            <md-select ng-model="selectedMonth">
+                <md-option ng-repeat="month in monthes" value="{{month.title}}">{{month.title}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex style="min-width:300px">
+            <label>Студия</label>
+            <md-select ng-model="selectedStudioId" >
+                <md-option ng-repeat="s in studios" value="{{s.id}}">{{s.name}}</md-option>
+            </md-select>
+        </md-input-container>
+        <div flex></div>
+        <div>{{unusedWorkHoursTitle}}:<b>{{unusedWorkHours}}</b></div>
+    </div>
+    <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+        <div layout="column" class="calendar" style="position:relative">
+            <div layout="row" id="calDays">
+                <div flex="14" class="weekDay blue">Понедельник</div>
+                <div flex="14" class="weekDay blue">Втотник</div>
+                <div flex="14" class="weekDay blue">Среда</div>
+                <div flex="14" class="weekDay blue">Четверг</div>
+                <div flex="14" class="weekDay blue">Пятница</div>
+                <div flex="14" class="weekDay blue">Суббота</div>
+                <div flex="14" class="weekDay blue">Воскресенье</div>
+            </div>
+            <div layout="" class="week" ng-repeat="week in weeks" >
+                <div flex="14" layout="column" class="day gray" style="position:relative" ng-repeat="day in week.days"
+                     ng-class="{ 'different-month': !day.isCurrentMonth, red:isFullyBooked(day), green: hasFreeWorkplaces(day), violet: day.availability.isReserved}"
+                     ng-click="selectDay(day)" ng-disabled="!day.isCurrentMonth|| !day.availability || !isDateValid(day.date) || (day.availability.startTime === day.availability.endTime)">
+                    <div class="avilableWorkplaces">
+                        <span ng-hide="!day.isCurrentMonth">
+                            {{day.availability.availablePaces || '0'}}/{{day.availability.totalPlaces || '0'}}
+                        </span>
+                    </div>
+                    <div class="dayTitle">
+                        {{day.number}}
+                    </div>
+                    <div class="workTime" ng-hide="!day.isCurrentMonth">
+                        <span ng-hide="!day.isCurrentMonth">
+                            {{day.availability.startTime ? day.availability.startTime.format('HH:mm') : '00:00'}} - {{day.availability.endTime ? day.availability.endTime.format('HH:mm') : '00:00'}}
+                        </span>
+                    </div>
+                    <md-icon md-font-set="material-icons" class="icon-warning" ng-show="day.availability.isExchangeProposed" style="position:absolute; top:0; right:0; margin:4px" aria-label="Предложение обмена" title="Предложение обмена"> warning </md-icon>
+                </div>
+
+            </div>
+            <div class="progress-container" ng-show="isLoading">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
+        </div>
+    </md-whiteframe>
+</div>
