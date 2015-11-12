@@ -189,6 +189,7 @@ body {
         color: #FFF;
         margin-left:10px;
         padding: 4px 7px 2px 4px;
+        width: 14%;
     }
 
     .calendar .weekDay:first-child

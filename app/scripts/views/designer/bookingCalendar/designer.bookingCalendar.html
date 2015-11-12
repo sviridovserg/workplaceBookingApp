@@ -18,16 +18,16 @@
     <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
         <div layout="column" class="calendar" style="position:relative">
             <div layout="row" id="calDays">
-                <div flex="14" class="weekDay blue">Понедельник</div>
-                <div flex="14" class="weekDay blue">Втотник</div>
-                <div flex="14" class="weekDay blue">Среда</div>
-                <div flex="14" class="weekDay blue">Четверг</div>
-                <div flex="14" class="weekDay blue">Пятница</div>
-                <div flex="14" class="weekDay blue">Суббота</div>
-                <div flex="14" class="weekDay blue">Воскресенье</div>
+                <div flex="auto" class="weekDay blue">Понедельник</div>
+                <div flex="auto" class="weekDay blue">Втотник</div>
+                <div flex="auto" class="weekDay blue">Среда</div>
+                <div flex="auto" class="weekDay blue">Четверг</div>
+                <div flex="auto" class="weekDay blue">Пятница</div>
+                <div flex="auto" class="weekDay blue">Суббота</div>
+                <div flex="auto" class="weekDay blue">Воскресенье</div>
             </div>
-            <div layout="" class="week" ng-repeat="week in weeks" >
-                <div flex="14" layout="column" class="day gray" style="position:relative" ng-repeat="day in week.days"
+            <div layout="row" class="week" ng-repeat="week in weeks" >
+                <div flex="auto" layout="column" class="day gray" style="position:relative; width:14%" ng-repeat="day in week.days"
                      ng-class="{ 'different-month': !day.isCurrentMonth, red:isFullyBooked(day), green: hasFreeWorkplaces(day), violet: day.availability.isReserved}"
                      ng-click="selectDay(day)" ng-disabled="!day.isCurrentMonth|| !day.availability || !isDateValid(day.date) || (day.availability.startTime === day.availability.endTime)">
                     <div class="avilableWorkplaces">
