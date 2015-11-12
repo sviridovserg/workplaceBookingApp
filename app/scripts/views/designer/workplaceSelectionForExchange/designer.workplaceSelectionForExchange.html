@@ -9,36 +9,39 @@
                 </md-button>
             </div>
         </md-toolbar>
-        <md-dialog-content style="max-width:800px;max-height:400px; ">
-                <md-content style="max-height:350px; min-height:200px; min-width:455px; position:relative">
+        <md-dialog-content >
+                <md-content>
                     <md-radio-group ng-model="selectedBookingId" class="md-primary">
-                        <div layout="row" layout-margin
-                             ng-repeat="b in bookings" class="ws-selection-row grid-line" >
-                            <div class="grid-cell" style="padding-top:4px">
-                                <md-radio-button value="{{b.id}}" ng-disabled="b.isExchangeProposed"> </md-radio-button>
+                        <div layout="row" layout-sm="column"
+                             ng-repeat="b in bookings" class="ws-selection-row grid-line">
+                            <div layout="row">
+                                <div class="grid-cell" style="padding-top:4px">
+                                    <md-radio-button value="{{b.id}}" ng-disabled="b.isExchangeProposed"> </md-radio-button>
+                                </div>
+                                <div class="no-wrap grid-cell">
+                                    {{b.date.format('DD MMMM YYYY')}}
+                                </div>
+                                <div class="no-wrap grid-cell">
+                                    <span>
+                                        {{b.startTime ? b.startTime.format('HH:mm') : '00:00'}} - {{b.endTime ? b.endTime.format('HH:mm') : '00:00'}}
+                                    </span>
+                                </div>
                             </div>
-                            <div class="no-wrap grid-cell">
-                                {{b.date.format('DD MMMM YYYY')}}
+                            <div layout="row">
+                                <div class="grid-cell">
+                                    {{b.studio.name}}
+                                </div>
+                                <div class="grid-cell">
+                                    {{b.workplace.title}}
+                                </div>
                             </div>
-                            <div class="no-wrap grid-cell">
-                                <span>
-                                    {{b.startTime ? b.startTime.format('HH:mm') : '00:00'}} - {{b.endTime ? b.endTime.format('HH:mm') : '00:00'}}
-                                </span>
-                            </div>
-                            <div class="grid-cell">
-                                {{b.studio.name}}
-                            </div>
-                            <div class="grid-cell">
-                                {{b.workplace.title}}
-                            </div>
-
                         </div>
                         
                     </md-radio-group>
-                    <div class="progress-container" ng-show="isLoading">
-                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-                    </div>
                 </md-content>
+            <div class="progress-container" ng-show="isLoading">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+            </div>
         </md-dialog-content>
         <div class="md-actions" layout="row">
             <span flex></span>

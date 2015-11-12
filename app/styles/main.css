@@ -9,78 +9,6 @@ body {
   padding: 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
 
 .app {
     width:100%;
@@ -88,6 +16,10 @@ body {
     box-sizing: border-box;
 }
 
+.app h3
+{
+    font-size: 16px;
+}
 
     /*.app md-whiteframe {
         display:block;
@@ -260,6 +192,13 @@ body {
             color:#C0C0C0;
         }
 
+        .calendar div.week .day .icon-has-exchange {
+            position:absolute; 
+            top:0;
+            right:0; 
+            margin:4px
+        }
+
 
 .bold {
     font-weight:bold;
@@ -269,14 +208,38 @@ body {
     white-space:nowrap;
 }
 
+.app md-dialog-content {
+    margin:8px;
+    min-height:80px;
+}
+
+.ws-list {
+    margin-top:8px;
+}
+
 .ws-selection md-radio-button,
 .ws-selection md-button{
     margin:0px
 }
 
-.ws-selection-row {
-    min-height:40px
+.ws-selection md-dialog-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
+
+.ws-selection-row {
+    min-height:40px;
+    margin-top: 8px;
+}
+
+.ws-selection-row > .flex {
+    margin:8px;
+}
+
+    .ws-selection-row:first-child {
+        margin-top: 0px;
+    }
 
 .md-error-toast-theme  {
      background: #ff8a80;
@@ -332,10 +295,7 @@ body {
     box-sizing: border-box;
 }
 
-.app h3
-{
-    font-size: 16px;
-}
+
 
 md-list md-list-item.md-3-line .md-list-item-text.not-read,
 md-list md-list-item.md-3-line .md-list-item-text.not-read h3
@@ -349,11 +309,7 @@ md-list md-list-item.md-3-line .md-list-item-text.not-read h3
         color: #000;
     }
 
-.login-container {
-    width:380px;
-    min-width:380px;
-    display:block;
-}
+
 
 .app .md-open-menu-container
 {
@@ -414,4 +370,75 @@ md-list md-list-item.md-3-line .md-list-item-text.not-read h3
 .app md-icon.invalid
 {
     color:rgb(244,67,54);
+}
+
+
+/* Responsive: Portrait tablets and large phones */
+@media screen and (max-width: 768px) and (min-width: 0px) {
+    .app .md-toolbar-tools {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .app h3 {
+        font-size: 12px;
+    }
+
+    .not-used-hours-title {
+        font-size: 12px;
+    }
+
+    .app .calendar {
+        margin: 3px;
+    }
+
+    .calendar .weekDay {
+        font-size: 10px;
+        margin-left:4px;
+    }
+
+    .calendar div.week {
+        margin-top: 5px;
+    }
+
+        .calendar div.week .day {
+            margin-left:4px;
+        }
+
+    .calendar div.week .day .dayTitle {
+        font-size: 20px;
+    }
+
+    .calendar div.week .day .avilableWorkplaces{
+        font-size: 10px;
+    }
+
+    .calendar div.week .day .workTime {
+        height:10px;
+        font-size: 8px;
+    }
+
+    .calendar div.week .day .icon-has-exchange {
+        margin:0px;
+        font-size: 12px;
+        width:12px;
+        height:12px;
+    }
+
+    .app md-dialog-content {
+        margin:4px;
+    }
+
+    .ws-selection-row {
+        margin-top: 4px;
+    }
+
+    .ws-selection-row > .flex {
+        margin:4px;
+    }
+
+    
 }

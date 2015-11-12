@@ -1,5 +1,5 @@
 ﻿<div layout="column">
-    <div layout="row" id="calHeader">
+    <div layout="row" layout-sm="column" id="calHeader">
         <md-input-container style="min-width:150px;">
             <label>Месяц</label>
             <md-select ng-model="selectedMonth">
@@ -13,18 +13,18 @@
             </md-select>
         </md-input-container>
         <div flex></div>
-        <div>{{unusedWorkHoursTitle}}:<b>{{unusedWorkHours}}</b></div>
+        <div class="not-used-hours-title">{{unusedWorkHoursTitle}}:<b>{{unusedWorkHours}}</b></div>
     </div>
     <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
         <div layout="column" class="calendar" style="position:relative">
             <div layout="row" id="calDays">
-                <div flex="auto" class="weekDay blue">Понедельник</div>
-                <div flex="auto" class="weekDay blue">Втотник</div>
-                <div flex="auto" class="weekDay blue">Среда</div>
-                <div flex="auto" class="weekDay blue">Четверг</div>
-                <div flex="auto" class="weekDay blue">Пятница</div>
-                <div flex="auto" class="weekDay blue">Суббота</div>
-                <div flex="auto" class="weekDay blue">Воскресенье</div>
+                <div flex="auto" class="weekDay blue">{{'MONDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'TUESDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'WEDNESDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'THURSDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'FRIDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'SATURDAY' | translate}}</div>
+                <div flex="auto" class="weekDay blue">{{'SUNDAY' | translate}}</div>
             </div>
             <div layout="row" class="week" ng-repeat="week in weeks" >
                 <div flex="auto" layout="column" class="day gray" style="position:relative; width:14%" ng-repeat="day in week.days"
@@ -43,7 +43,7 @@
                             {{day.availability.startTime ? day.availability.startTime.format('HH:mm') : '00:00'}} - {{day.availability.endTime ? day.availability.endTime.format('HH:mm') : '00:00'}}
                         </span>
                     </div>
-                    <md-icon md-font-set="material-icons" class="icon-warning" ng-show="day.availability.isExchangeProposed" style="position:absolute; top:0; right:0; margin:4px" aria-label="Предложение обмена" title="Предложение обмена"> warning </md-icon>
+                    <md-icon md-font-set="material-icons" class="icon-warning icon-has-exchange" ng-show="day.availability.isExchangeProposed" aria-label="Предложение обмена" title="Предложение обмена"> warning </md-icon>
                 </div>
 
             </div>

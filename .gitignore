@@ -1,4 +1,4 @@
 bower_components
-node_modulesmodules
+node_modules
 .tmp
 /app/scripts/templates.js

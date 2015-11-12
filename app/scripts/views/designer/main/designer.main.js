@@ -8,8 +8,8 @@
  * Controller of the designerWorkplaceApp
  */
 angular.module('designerWorkplaceApp')
-  .controller('designerMainCtrl', ['$scope', '$mdSidenav', '$mdToast', '$mdUtil', '$state', '$document', '$timeout', '$interval', 'userService', 'messageService',
-      function ($scope, $mdSidenav, $mdToast, $mdUtil, $state, $document, $timeout, $interval, userService, messageService) {
+  .controller('designerMainCtrl', ['$scope', '$mdSidenav', '$mdToast', '$mdUtil', '$state', '$document', '$timeout', '$interval', 'userService', 'messageService', 'appConfig',
+      function ($scope, $mdSidenav, $mdToast, $mdUtil, $state, $document, $timeout, $interval, userService, messageService, appConfig) {
       $scope.menu = {};
       /**
        * Build handler to open/close a SideNav; when animation finishes
@@ -36,7 +36,7 @@ angular.module('designerWorkplaceApp')
           var hiddenIframe = angular.element('<iframe></iframe>');
           hiddenIframe.css('display', 'none');
           hiddenIframe.attr('target', '_blank');
-          hiddenIframe.attr('src', ' http://188.227.19.222/DesignerWorkplace/Manual/Инструкция по бронированию рабочих мест дизайнером.docx');
+          hiddenIframe.attr('src', appConfig.helpUrl);
           var body = $document.find('body').eq(0);
           body.append(hiddenIframe);
           $timeout(function () {
@@ -75,7 +75,7 @@ angular.module('designerWorkplaceApp')
                                $mdToast.cancel();
                            };
                        }],
-                       template: '<md-toast class="new-message-notification">У вас есть непрочитанные сообщения&nbsp;<span flex class="new-message-notification-text" ng-click="goToMessages()">Перейти...</span><md-button ng-click="close()"><md-icon md-font-set="material-icons">close</md-icon></md-button></md-toast>',
+                       template: '<md-toast class="new-message-notification"><div flex>У вас есть непрочитанные сообщения&nbsp;<span flex class="new-message-notification-text" ng-click="goToMessages()">Перейти...</span></div><md-button ng-click="close()"><md-icon md-font-set="material-icons">close</md-icon></md-button></md-toast>',
                        position: 'top right',
                        hideDelay: 0
                    }).then(function () {

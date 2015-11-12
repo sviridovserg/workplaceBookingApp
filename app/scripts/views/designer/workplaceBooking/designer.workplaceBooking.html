@@ -9,50 +9,48 @@
                 </md-button>
             </div>
         </md-toolbar>
-        <md-dialog-content style="max-width:800px;max-height:400px; ">
+        <md-dialog-content >
             <div>
-                <div>
-                    <span class="md-caption">Дата:</span>
-                    <span class="md-body-1 bold">{{dayTitle}}</span>
-                </div>
-                <md-content style="max-height:350px; min-height:200px; position:relative">
-                    <md-radio-group ng-model="selectedWorkplaceId" class="md-primary" >
-                        <div layout="row" layout-margin
-                             ng-repeat="w in workplaces" class="ws-selection-row" ng-class="{ red: w.designer, green: !w.designer, violet: w.designer.id==currentUser.jobPositionId }">
-                            <div flex>
-                                {{w.workplace.title}}
-                            </div>
-                            <div flex >
-                                <div layout="row" ng-if="w.designer">
-                                    <span>
-                                        {{w.designer.name}}
-                                    </span>
-                                    <md-button class="md-icon-button inline-icon" aria-label="Обмен" title="Выставить на обмен" 
-                                        ng-if="w.designer.id==currentUser.jobPositionId && !w.isExchangeProposed"
-                                               ng-click="proposeExchangeWorkplace(w)">
-                                        <md-icon md-font-set="material-icons"> publish </md-icon>
-                                    </md-button>
-                                    <md-button class="md-icon-button inline-icon" aria-label="Предложение обмена" title="Предложение обмена" ng-if="canExchange(w)"
-                                               ng-click="acceptExchangeWorkplace(w)">
-                                        <md-icon md-font-set="material-icons"> file_download </md-icon>
-                                    </md-button>
-                                </div>
-                                
-                                <div ng-if="!w.designer">
-                                    <md-radio-button value="{{w.workplace.id}}" ng-disabled="isWorkplaceAlreadyBooked()"> </md-radio-button>
-                                </div>
-                            </div>
-                            <div flex class="no-wrap">
+                <span class="md-caption">Дата:</span>
+                <span class="md-body-1 bold">{{dayTitle}}</span>
+            </div>
+            <md-content class="ws-list">
+                <md-radio-group ng-model="selectedWorkplaceId" class="md-primary" >
+                    <div layout="row"
+                            ng-repeat="w in workplaces" class="ws-selection-row" ng-class="{ red: w.designer, green: !w.designer, violet: w.designer.id==currentUser.jobPositionId }">
+                        <div flex>
+                            {{w.workplace.title}}
+                        </div>
+                        <div flex >
+                            <div layout="row" ng-if="w.designer">
                                 <span>
-                                    {{w.startTime ? w.startTime.format('HH:mm') : '00:00'}} - {{w.endTime ? w.endTime.format('HH:mm') : '00:00'}}
+                                    {{w.designer.name}}
                                 </span>
+                                <md-button class="md-icon-button inline-icon" aria-label="Обмен" title="Выставить на обмен" 
+                                    ng-if="w.designer.id==currentUser.jobPositionId && !w.isExchangeProposed"
+                                            ng-click="proposeExchangeWorkplace(w)">
+                                    <md-icon md-font-set="material-icons"> publish </md-icon>
+                                </md-button>
+                                <md-button class="md-icon-button inline-icon" aria-label="Предложение обмена" title="Предложение обмена" ng-if="canExchange(w)"
+                                            ng-click="acceptExchangeWorkplace(w)">
+                                    <md-icon md-font-set="material-icons"> file_download </md-icon>
+                                </md-button>
+                            </div>
+                                
+                            <div ng-if="!w.designer">
+                                <md-radio-button value="{{w.workplace.id}}" ng-disabled="isWorkplaceAlreadyBooked()"> </md-radio-button>
                             </div>
                         </div>
-                    </md-radio-group>
-                    <div class="progress-container" ng-show="isLoading">
-                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                        <div flex class="no-wrap">
+                            <span>
+                                {{w.startTime ? w.startTime.format('HH:mm') : '00:00'}} - {{w.endTime ? w.endTime.format('HH:mm') : '00:00'}}
+                            </span>
+                        </div>
                     </div>
-                </md-content>
+                </md-radio-group>
+            </md-content>
+            <div class="progress-container" ng-show="isLoading">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
             </div>
         </md-dialog-content>
         <div class="md-actions" layout="row">

@@ -20,7 +20,7 @@ angular.module('designerWorkplaceApp')
               var nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
               $scope.monthes = [];
-              for (var i = 0; i < 5 ; i++) {
+              for (var i = 0; i < 2 ; i++) {
                   var date = moment(nowDate).add(i, 'month').toDate();
 
                   $scope.monthes.push({
