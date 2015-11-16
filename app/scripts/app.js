@@ -39,6 +39,11 @@ angular
             templateUrl: 'scripts/views/designer/bookingCalendar/designer.bookingCalendar.html',
             controller: 'bookingCalendarCtrl'
         })
+        .state('designer.schedule', {
+            url: '/designer/schedule',
+            templateUrl: 'scripts/views/designer/schedule/designer.schedule.html',
+            controller: 'designerScheduleCtrl'
+        })
         .state('changePassword', {
             url: '/changepassword',
             templateUrl: 'scripts/views/changePassword/changePassword.html',

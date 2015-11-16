@@ -47,6 +47,14 @@ angular.module('designerWorkplaceApp')
       $scope.currentUser = userService.getCurrentUser();
 
       $scope.showMessages = buildToggler('messages');
+
+      $scope.showSchedule = function () {
+          $state.transitionTo('designer.schedule');
+      }
+
+      $scope.showBookingCalendar = function () {
+          $state.transitionTo('designer.bookingCalendar');
+      }
         
       var lastMessagesCheckDate = moment();
       var stop = $interval(function () {

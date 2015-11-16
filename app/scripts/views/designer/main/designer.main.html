@@ -4,7 +4,7 @@
             <md-icon md-font-set="material-icons" > menu </md-icon>
         </md-button>-->
         <h2>
-            <span>Рабочее место Дизайнера</span>
+            <span ng-click="showBookingCalendar()" class="designer-app-title">Рабочее место Дизайнера</span>
         </h2>
         <span flex></span>
 
@@ -15,6 +15,11 @@
                     <md-icon md-menu-origin md-font-set>menu</md-icon>
                 </md-button>
                 <md-menu-content class="icon-menu">
+                    <md-menu-item>
+                        <md-button ng-click="showSchedule()" aria-label="Расписание" class="md-fab md-raised md-mini icon-in-menu">
+                            <md-icon md-menu-align-target md-font-set="material-icons"> event_note </md-icon>
+                        </md-button>
+                    </md-menu-item>
                     <md-menu-item>
                         <md-button ng-click="showMessages()" aria-label="Сообщения" class="md-fab md-raised md-mini icon-in-menu">
                             <md-icon md-menu-align-target md-font-set="material-icons"> chat </md-icon>

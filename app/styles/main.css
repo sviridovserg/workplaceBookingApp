@@ -21,6 +21,11 @@ body {
     font-size: 16px;
 }
 
+    .app .designer-app-title
+    {
+        cursor: pointer;
+    }
+
     /*.app md-whiteframe {
         display:block;
     }*/

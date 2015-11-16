@@ -47,6 +47,15 @@
             }, createWorkplaceAvailability, 'Произошла ошибка при получении информации по загрузки студии на дату');
     }
 
+    function getDesignerSchedule(user, year, month) {
+        return dataService.getList('/DesignerWorkplace/GetDesignerSchedule',
+            {
+                JobPositionId: user.jobPositionId,
+                Year: year,
+                Month: month
+            }, createWorkplaceAvailability, 'Произошла ошибка при получении расписания работы');
+    }
+
     function bookWorkspace(studioId, user, workplaceAvailability) {
         var startTime = workplaceAvailability.startTime; //moment().hour(0).minute(0).second(0).millisecond(0);
         var endTime = workplaceAvailability.endTime;
@@ -98,9 +107,11 @@
             }, null, 'Произошла ошибка при отклонении обмена');
     }
 
+
     return {
         getBookedWorkplaces: getBookedWorkplaces,
         getWorkplaceAvailablityForDate: getWorkplaceAvailablityForDate,
+        getDesignerSchedule: getDesignerSchedule,
         bookWorkspace: bookWorkspace,
         proposeExchangeWorkplace: proposeExchangeWorkplace,
         acceptExchangeWorkplace: acceptExchangeWorkplace,
