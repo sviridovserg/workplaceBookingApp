@@ -7,6 +7,13 @@
             name: data.FormattedName,
             id: data.Id,
             jobPositionId: data.JobPositionId,
+            settings: {
+                limits: {
+                    primary: data.MainBookingLimit,
+                    secondary: data.SecondBookingLimit,
+
+                }
+            },
             servData_: data
         };
     }

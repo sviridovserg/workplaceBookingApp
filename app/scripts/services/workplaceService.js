@@ -32,7 +32,8 @@
         if (data.StudioId) {
             result.studio = {
                 id: data.StudioId,
-                name: data.StudioName
+                name: data.StudioName,
+                shortName: data.StudioShortName
             };
         }
         return result;
@@ -48,7 +49,7 @@
     }
 
     function getDesignerSchedule(user, year, month) {
-        return dataService.getList('/DesignerWorkplace/GetDesignerSchedule',
+        return dataService.getList('/DesignerWorkplace/GetDesignerWorkTimetables',
             {
                 JobPositionId: user.jobPositionId,
                 Year: year,

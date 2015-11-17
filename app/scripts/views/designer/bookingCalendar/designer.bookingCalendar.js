@@ -28,7 +28,9 @@ angular.module('designerWorkplaceApp')
                       title: moment(date).format('MMMM YYYY')
                   });
               }
-
+              if (moment(nowDate).add(currentUser.settings.limits.primary, 'day').month() === now.getMonth()) {
+                  $scope.monthes.splice(1, 1);
+              }
               $scope.selectedMonth = moment(defaultValues.selectedMonth || nowDate).format('MMMM YYYY');
           }
           initMonthes();

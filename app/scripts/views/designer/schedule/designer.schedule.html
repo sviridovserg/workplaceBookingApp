@@ -24,7 +24,7 @@
                      ng-disabled="!day.isCurrentMonth|| !day.reservation || !isDateValid(day.date) || (day.reservation.startTime === day.reservation.endTime)">
                     <div class="avilableWorkplaces">
                         <span ng-hide="!day.isCurrentMonth">
-                            {{day.reservation.availablePaces || '0'}}/{{day.reservation.totalPlaces || '0'}}
+                            {{day.reservation.studio.shortName}}
                         </span>
                     </div>
                     <div class="dayTitle">

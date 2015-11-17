@@ -64,9 +64,6 @@ angular.module('designerWorkplaceApp')
           }
 
           function getSchedule(date) {
-              if ($scope.selectedStudioId === undefined) {
-                  return;
-              }
               $scope.isLoading = true;
               workplaceService.getDesignerSchedule(currentUser, moment(date).year(), moment(date).month() + 1).then(function (workplaceSchedule) {
 
