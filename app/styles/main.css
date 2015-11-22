@@ -445,5 +445,25 @@ md-list md-list-item.md-3-line .md-list-item-text.not-read h3
         margin:4px;
     }
 
-    
+    .app md-menu-content.icon-menu .md-button
+    {
+        padding: 0px 4px 0px 4px;
+        width: 34px;
+        min-width: 30px;
+        margin-left: 2px;
+        
+    }
+
+    .app md-menu-content.icon-menu .md-button.md-fab.md-mini
+    {
+            line-height: 34px;
+            height:34px;
+            min-height: 34px;
+    }
+        .app md-menu-content.icon-menu .md-button.md-fab.md-mini md-icon
+        {
+            font-size:26px;
+            height:26px;
+            width:26px;
+        }
 }
