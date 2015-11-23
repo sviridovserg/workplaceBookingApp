@@ -21,6 +21,11 @@ body {
     font-size: 16px;
 }
 
+    .app .btn-home
+    {
+        min-width:initial
+    }
+
     .app .designer-app-title
     {
         cursor: pointer;
@@ -341,6 +346,7 @@ md-list md-list-item.md-3-line .md-list-item-text.not-read h3
         width: 28px;
         min-width: 24px;
         margin-left: 2px;
+        z-index:1000;
         
     }
 

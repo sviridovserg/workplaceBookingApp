@@ -7,7 +7,7 @@
         </md-toolbar>
         <form name="loginForm" novalidate style="position:relative">
             <md-content layout-padding style="min-height:136px">
-                <md-input-container class="md-icon-float">
+                <md-input-container class="md-icon-float login-input">
                     <label>Имя Пользователя</label>
                     <md-icon class="material-design" ng-class="{ 'invalid':loginForm.uUserName.$error.required && (loginForm.$submitted || loginForm.uUserName.$touched) }">
                         perm_identity
@@ -18,7 +18,7 @@
                              ng-show="loginForm.uUserName.$error.required && (loginForm.$submitted || loginForm.uUserName.$touched)">Поле обязательно для заполнения</div>
                     </div>
                 </md-input-container>
-                <md-input-container class="md-icon-float">
+                <md-input-container class="md-icon-float login-input">
                     <label>Пароль</label>
                     <md-icon class="material-design" ng-class="{ 'invalid':loginForm.uPassword.$invalid && (loginForm.$submitted || loginForm.uPassword.$touched) }">
                         lock
