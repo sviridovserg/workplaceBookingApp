@@ -20,7 +20,7 @@
             </div>
             <div layout="row" class="week" ng-repeat="week in weeks" >
                 <div flex="auto" layout="column" class="day gray" style="position:relative; width:14%" ng-repeat="day in week.days"
-                     ng-class="{ 'different-month': !day.isCurrentMonth, red:isFullyBooked(day), green: hasFreeWorkplaces(day), violet: day.reservation.isReserved}"
+                     ng-class="{ 'different-month': !day.isCurrentMonth, violet: day.reservation }"
                      ng-disabled="!day.isCurrentMonth|| !day.reservation || !isDateValid(day.date) || (day.reservation.startTime === day.reservation.endTime)">
                     <div class="avilableWorkplaces">
                         <span ng-hide="!day.isCurrentMonth">
