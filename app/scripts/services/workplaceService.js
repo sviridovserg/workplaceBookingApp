@@ -57,6 +57,14 @@
             }, createWorkplaceAvailability, 'Произошла ошибка при получении расписания работы');
     }
 
+    function getScheduledMonths(user)
+    {
+        return dataService.getList('/DesignerWorkplace/GetWorkedMonths',
+            {
+                JobPositionId: user.jobPositionId
+            }, function (item) { return { month: item.Index - 1, year:item.Year } }, 'Произошла ошибка при получении месяцев для расписания');
+    }
+
     function bookWorkspace(studioId, user, workplaceAvailability) {
         var startTime = workplaceAvailability.startTime; //moment().hour(0).minute(0).second(0).millisecond(0);
         var endTime = workplaceAvailability.endTime;
@@ -117,6 +125,7 @@
         proposeExchangeWorkplace: proposeExchangeWorkplace,
         acceptExchangeWorkplace: acceptExchangeWorkplace,
         finishExchangeWorkplace: finishExchangeWorkplace,
-        declineExchangeWorkplace: declineExchangeWorkplace
+        declineExchangeWorkplace: declineExchangeWorkplace,
+        getScheduledMonths: getScheduledMonths
     };
 }]);

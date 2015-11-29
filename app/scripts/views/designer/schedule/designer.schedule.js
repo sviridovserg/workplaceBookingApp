@@ -15,20 +15,21 @@ angular.module('designerWorkplaceApp')
 
           var currentUser = userService.getCurrentUser();
           function initMonthes() {
-              var now = new Date();
-              var nowDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-              $scope.monthes = [];
-              for (var i = 0; i < 2 ; i++) {
-                  var date = moment(nowDate).add(i, 'month').toDate();
-
-                  $scope.monthes.push({
-                      value: date,
-                      title: moment(date).format('MMMM YYYY')
+              $scope.isLoading = true;
+              workplaceService.getScheduledMonths(currentUser).then(
+                  function (monthes) {
+                      $scope.monthes = [];
+                      for (var i = 0; i < monthes.length; i++)
+                      {
+                          var date = new Date(monthes[i].year, monthes[i].month, 1);
+                          $scope.monthes.push({
+                              value: date,
+                              title: moment(date).format('MMMM YYYY')
+                          });
+                      }
+                      $scope.selectedMonth = moment(defaultValues.selectedMonth || $scope.monthes[$scope.monthes.length - 1].date).format('MMMM YYYY');
+                      $scope.isLoading = false;
                   });
-              }
-
-              $scope.selectedMonth = moment(defaultValues.selectedMonth || nowDate).format('MMMM YYYY');
           }
           initMonthes();
 
