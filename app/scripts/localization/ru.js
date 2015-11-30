@@ -1,8 +1,8 @@
-﻿'use strict'
-function getLocal_Ru() {
+﻿'use strict';
+function getLocalRu() {
     return {
-        MONDAY: 'Понедельние',
-        TUESDAY: 'Вториник',
+        MONDAY: 'Понедельник',
+        TUESDAY: 'Вторник',
         WEDNESDAY: 'Среда',
         THURSDAY: 'Четверг',
         FRIDAY: 'Пятница',

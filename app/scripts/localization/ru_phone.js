@@ -1,4 +1,5 @@
-﻿function getLocal_Ru_Phone() {
+﻿'use strict';
+function getLocalRuPhone() {
     return {
         MONDAY: 'Пн',
         TUESDAY: 'Вт',

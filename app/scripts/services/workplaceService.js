@@ -62,7 +62,7 @@
         return dataService.getList('/DesignerWorkplace/GetWorkedMonths',
             {
                 JobPositionId: user.jobPositionId
-            }, function (item) { return { month: item.Index - 1, year:item.Year } }, 'Произошла ошибка при получении месяцев для расписания');
+            }, function (item) { return { month: item.Index - 1, year: item.Year }; }, 'Произошла ошибка при получении месяцев для расписания');
     }
 
     function bookWorkspace(studioId, user, workplaceAvailability) {

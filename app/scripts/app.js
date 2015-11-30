@@ -52,13 +52,13 @@ angular
   })
   .config(['$translateProvider', '$windowProvider', function ($translateProvider, $windowProvider) {
       var window = $windowProvider.$get();
-      function mergeTranslations(tr, tr_phone) {
+      function mergeTranslations(tr, trPhone) {
           if (window.innerWidth < 768) {
-              return angular.extend({}, tr, tr_phone)
+              return angular.extend({}, tr, trPhone);
           }
           return angular.extend({}, tr);
-      };
-      $translateProvider.translations('ru', mergeTranslations(getLocal_Ru(), getLocal_Ru_Phone()));
+      }
+      $translateProvider.translations('ru', mergeTranslations(getLocalRu(), getLocalRuPhone()));
       $translateProvider.preferredLanguage('ru');
     }])
   .run(['$rootScope', '$state', 'userService', function ($rootScope, $state, userService) {
